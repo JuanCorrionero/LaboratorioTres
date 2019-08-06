@@ -25,5 +25,23 @@ id tinyint not null identity (1,1) primary key,
 nombre varchar(15) not null,
 codigo_postal tinyint not null foreign key localidades (id),
 direccion varchar(50) not null ,
+telefono int null,
+direccion_mail varchar(30) null
+)
+
+go
+
+create table localidades(
+id tinyint not null primary key identity (1,1),
+nombre varchar(30) not null ,
+id_provincia tinyint not null foreign key provincias (id)
 
 )
+
+go
+
+create table provincias(
+id tinyint not null primary key identity (1,1),
+nombre varchar(30) not null
+)
+
