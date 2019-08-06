@@ -1,0 +1,8 @@
+create table socios(
+id int not null primary key identity (1,1),
+nombre varchar(15) not null,
+edad int not null,
+idActividad int not null foreign key actividades (idActividad),
+
+
+)
