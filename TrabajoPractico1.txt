@@ -2,7 +2,7 @@ create table socios(
 legajo int not null primary key identity (1000,1000) primary key,
 nombre varchar(15) not null,
 edad tinyint null,
-idActividad int not null foreign key actividades (id),
+id_actividad int not null foreign key actividades (id),
 fecha_nacimiento date not null check(fecha_nacimiento < 2010-1-1),
 genero char not null
 )
