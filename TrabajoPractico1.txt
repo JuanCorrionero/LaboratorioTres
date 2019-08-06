@@ -1,8 +1,29 @@
 create table socios(
-id int not null primary key identity (1,1),
+legajo int not null primary key identity (1000,1000) primary key,
 nombre varchar(15) not null,
-edad int not null,
-idActividad int not null foreign key actividades (idActividad),
+edad tinyint null,
+idActividad int not null foreign key actividades (id),
+fecha_nacimiento date not null check(fecha_nacimiento < 2010-1-1),
+genero char not null
+)
 
+go
+
+create table actividades(
+id tinyint identity (1,1) not null primary key,
+nombre varchar(15) not null,
+costo money not null check(costo > 0),
+requerimiento_medico bit not null,
+id_sede tinyint not null foreign key sedes (id)
+
+)
+
+go 
+
+create table sedes( // falta provincia
+id tinyint not null identity (1,1) primary key,
+nombre varchar(15) not null,
+codigo_postal tinyint not null foreign key localidades (id),
+direccion varchar(50) not null ,
 
 )
